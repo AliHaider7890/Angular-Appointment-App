@@ -1,0 +1,70 @@
+<!-- <p>{{appointment.id}}</p>
+<p>{{appointment.title}}</p>
+<p>{{appointment.date}}</p> 
+
+<div>
+
+    <input [(ngModel)] = "newAppointmenttitle" placeholder="appointment title"> 
+    <input [(ngModel)] =  "newAppointmentDate" type="date" placeholder="appointment date"> 
+    <button  (click) = "addApointment()" >Submit</button>
+</div>
+
+<ul>
+
+    <li *ngFor="let appointment of appointments , index as i ">
+
+{{appointment.id}} {{appointment.title}} {{appointment.date}}
+
+<button (click) = "deleteAppointment(i)" > Delete </button>
+
+    </li>
+
+</ul> -->
+
+
+<div style="max-width: 500px; margin: auto; padding: 1rem;">
+    <h2 style="text-align: center;">Add Appointment</h2>
+  
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <input
+        [(ngModel)]="newAppointmenttitle"
+        placeholder="Appointment Title"
+        style="padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc;"
+      />
+  
+      <input
+        [(ngModel)]="newAppointmentDate"
+        type="date"
+        style="padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc;"
+      />
+  
+      <button
+        (click)="addApointment()"
+        style="padding: 0.5rem; background-color: #007bff; color: white; border: none; border-radius: 5px;"
+      >
+        Submit
+      </button>
+    </div>
+  
+    <h3 style="margin-top: 2rem;">Appointments List</h3>
+  
+    <ul style="list-style: none; padding: 0;">
+      <li
+        *ngFor="let appointment of appointments; index as i"
+        style="padding: 0.75rem; border: 1px solid #eee; margin-bottom: 0.5rem; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;"
+      >
+        <div>
+          <strong>#{{ appointment.id }}</strong> <br />
+          {{ appointment.title }} <br />
+          <small>{{ appointment.date }}</small>
+        </div>
+  
+        <button
+          (click)="deleteAppointment(i)"
+          style="background-color: red; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px;"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
